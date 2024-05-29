@@ -1,0 +1,14 @@
+#!/bin/bash
+# 2024 mkwilbux 
+# Read data from *.md file
+# Sample: in this sample there are 7 columns. The final sed statement is for the table format. Todo improve. The input file is 
+# declared explicity.. fix to declare at command as a parameter
+# the sed command explicitly has how many sections, auto this
+
+while IFS=$'\t' read -r c1 c2 c3a c4a c5a c6a c7a; do
+    echo "  | $c1 $c2| $c3a | $c4a | $c5a | $c6a | $c7a | "
+
+done < newtablesub.md >> out22
+
+# explicit declaration and insertion for format table
+sed -i '2i |---|---|---|---|---|---|---|' out22
